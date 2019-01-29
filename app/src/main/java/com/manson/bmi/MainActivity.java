@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         float weight_float = Float.parseFloat(w);
         float height_float = Float.parseFloat(h);
         float bmi = weight_float / (height_float * height_float);
+        Toast.makeText(this, "BMI is " + bmi, Toast.LENGTH_SHORT).show();
         Log.d("MainActivity", "bmi: " + bmi);
         Intent intent = new Intent(this, ResultActivity.class);
         intent.putExtra("BMI", bmi);
